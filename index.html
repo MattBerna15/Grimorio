@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Grimorio Manager V0.14 - Limits</title>
+    <title>Grimorio Manager V0.15 - AutoUpdate</title>
     
     <script src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/5.4.1/papaparse.min.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
@@ -55,16 +55,20 @@
             margin: 0; padding: 20px; transition: background-color 0.3s, color 0.3s; min-height: 100vh;
         }
 
+        /* --- TOP RIGHT BUTTONS --- */
+        .top-controls {
+            position: absolute; top: 20px; right: 20px; display: flex; gap: 10px; z-index: 100;
+        }
+        .icon-btn {
+            background: var(--card-bg); border: 1px solid var(--border-color);
+            color: var(--text-color); padding: 8px 12px; border-radius: 20px;
+            cursor: pointer; box-shadow: var(--shadow); transition: 0.3s;
+        }
+        .icon-btn:hover { transform: scale(1.1); border-color: var(--primary-color); }
+
         /* --- UI COMPONENTS --- */
         h1 { font-family: 'Cinzel', serif; color: var(--primary-color); text-align: center; margin: 5px 0; }
         .subtitle { text-align: center; color: var(--secondary-color); font-size: 0.9em; margin-bottom: 20px; }
-
-        .theme-switch {
-            position: absolute; top: 20px; right: 20px;
-            background: var(--card-bg); border: 1px solid var(--border-color);
-            color: var(--text-color); padding: 8px 12px; border-radius: 20px;
-            cursor: pointer; box-shadow: var(--shadow);
-        }
 
         /* --- CHARACTER SELECTOR --- */
         .char-manager {
@@ -110,7 +114,6 @@
             font-size: 0.7em; vertical-align: middle; margin-left: 5px; font-family: 'Lato', sans-serif; min-width: 15px; display: inline-block; text-align: center;
         }
         
-        /* Warning Badge Style */
         .tab-count.warning { background-color: var(--warning-color); animation: pulse-badge 2s infinite; }
         @keyframes pulse-badge { 0% { transform: scale(1); } 50% { transform: scale(1.1); } 100% { transform: scale(1); } }
 
@@ -252,7 +255,14 @@
 </head>
 <body>
 
-    <button class="theme-switch" onclick="toggleTheme()" title="Cambia Tema"><i class="fas fa-adjust"></i></button>
+    <div class="top-controls">
+        <button class="icon-btn" onclick="forceAppUpdate()" title="Aggiorna all'ultima versione">
+            <i class="fas fa-sync-alt"></i>
+        </button>
+        <button class="icon-btn" onclick="toggleTheme()" title="Cambia Tema">
+            <i class="fas fa-adjust"></i>
+        </button>
+    </div>
 
     <h1>Grimorio Arcano</h1>
     <div class="subtitle">D20 Revolution - Dual Class Manager</div>
@@ -419,6 +429,15 @@
     </div>
 
     <script>
+        // --- AUTO-UPDATE FUNCTION ---
+        function forceAppUpdate() {
+            if(confirm("Vuoi ricaricare l'applicazione per cercare aggiornamenti?")) {
+                // Aggiunge un parametro random all'URL per bypassare la cache
+                const newUrl = window.location.pathname + '?v=' + new Date().getTime();
+                window.location.href = newUrl;
+            }
+        }
+
         // --- GESTIONE DATI GLOBALI ---
         let spellData = [];
         let profiles = {}; 
@@ -575,7 +594,7 @@
         
         function loadGlobalData() {
             const s = localStorage.getItem('dnd_spellbook_db');
-            if(s) { spellData=JSON.parse(s); dbStatus.textContent="DB: OK"; dbStatus.style.color="var(--primary-color)"; initFilters(); }
+            if(s) { spellData=JSON.parse(s); dbStatus.textContent="DB: Cache"; dbStatus.style.color="var(--primary-color)"; initFilters(); }
         }
         fileInput.addEventListener('change', e => {
             if(!e.target.files[0]) return;
@@ -584,7 +603,7 @@
                 complete: r => {
                     spellData = r.data.filter(x=>x.Name);
                     localStorage.setItem('dnd_spellbook_db', JSON.stringify(spellData));
-                    dbStatus.textContent="DB: Aggiornato!"; initFilters(); updateUI();
+                    dbStatus.textContent="DB: Manuale"; initFilters(); updateUI();
                 }
             });
         });
