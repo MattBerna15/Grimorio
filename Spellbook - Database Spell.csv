@@ -524,8 +524,8 @@ If the attack roll scores a critical hit, the target of that missile takes 5d4 f
 If the attack roll for any missile is a 1, all missiles miss their targets and blow up in your face, dealing 1 force damage per missile to you.","At Higher Levels. When you cast this spell using a spell slot of 2nd level or higher, the spell creates one more dart, and the royalty component increases by 1 gp, for each slot level above 1st.",Instantaneous,"V, S, R (1 gp)",AI,,TRUE,TRUE,FALSE,FALSE,TRUE,FALSE,FALSE,FALSE,FALSE,TRUE,FALSE,FALSE,,,
 FALSE,1,Jump,Transmutation,Bonus,Touch,"You touch a willing creature.
 Once on each of its turns until the spell ends, that creature can jump up to 30 feet by spending 10 feet of movement.",Using a Higher-Level Spell Slot. You can target one additional creature for each spell slot level above 1.,1 minute,"V, S, M (a grasshopper's hind leg)",PHB'24,,TRUE,TRUE,FALSE,TRUE,TRUE,FALSE,TRUE,TRUE,FALSE,TRUE,FALSE,FALSE,,,
-FALSE,1,Longstrider,Transmutation,Action,Touch,You touch a creature.,,,,,,,,,,,,,,,,,,,,
-The target's Speed increases by 10 feet until the spell ends.,Using a Higher-Level Spell Slot. You can target one additional creature for each spell slot level above 1.,1 hour,"V, S, M (a pinch of dirt)",PHB'24,,TRUE,TRUE,FALSE,TRUE,TRUE,FALSE,TRUE,TRUE,FALSE,TRUE,FALSE,FALSE,,,,,,,,,
+FALSE,1,Longstrider,Transmutation,Action,Touch,"You touch a creature.
+The target's Speed increases by 10 feet until the spell ends.",Using a Higher-Level Spell Slot. You can target one additional creature for each spell slot level above 1.,1 hour,"V, S, M (a pinch of dirt)",PHB'24,,TRUE,TRUE,FALSE,TRUE,TRUE,FALSE,TRUE,TRUE,FALSE,TRUE,FALSE,FALSE,,,
 FALSE,1,Mage Armor,Abjuration,Action,Touch,"You touch a willing creature who isn't wearing armor.
 Until the spell ends, the target's base AC becomes 13 plus its Dexterity modifier.
 The spell ends early if the target dons armor.",,8 hours,"V, S, M (a piece of cured leather)",PHB'24,,TRUE,TRUE,FALSE,FALSE,TRUE,FALSE,FALSE,TRUE,FALSE,TRUE,FALSE,FALSE,,,
@@ -657,8 +657,8 @@ The affected creature must make a Int save or be dazed for 1 round and take 2d8 
 FALSE,2,Aganazzar's Scorcher,Evocation,Action,30 feet,"A line of roaring flame 30 feet long and 5 feet wide emanates from you in a direction you choose.
 Each creature in the line must make a Dexterity saving throw.
 A creature takes 3d8 fire damage on a failed save, or half as much damage on a successful one.","At Higher Levels. When you cast this spell using a spell slot of 3rd level or higher, the damage increases by 1d8 for each slot level above 2nd.",Instantaneous,"V, S, M (a red dragon's scale)",XGE,,TRUE,TRUE,FALSE,FALSE,TRUE,FALSE,FALSE,FALSE,FALSE,TRUE,FALSE,FALSE,,,
-FALSE,2,Aid,Abjuration,Action,30 feet,Choose up to three creatures within range.,,,,,,,,,,,,,,,,,,,,
-Each target's Hit Point maximum and current Hit Points increase by 5 for the duration.,Using a Higher-Level Spell Slot. Each target's Hit Points increase by 5 for each spell slot level above 2.,8 hours,"V, S, M (a strip of white cloth)",PHB'24,,FALSE,TRUE,TRUE,TRUE,FALSE,TRUE,TRUE,TRUE,TRUE,FALSE,FALSE,FALSE,,,,,,,,,
+FALSE,2,Aid,Abjuration,Action,30 feet,"Choose up to three creatures within range.
+Each target's Hit Point maximum and current Hit Points increase by 5 for the duration.",Using a Higher-Level Spell Slot. Each target's Hit Points increase by 5 for each spell slot level above 2.,8 hours,"V, S, M (a strip of white cloth)",PHB'24,,FALSE,TRUE,TRUE,TRUE,FALSE,TRUE,TRUE,TRUE,TRUE,FALSE,FALSE,FALSE,,,
 FALSE,2,Air Bubble,Conjuration,Action,60 feet,"You create a spectral globe around the head of a willing creature you can see within range.
 The globe is filled with fresh air that lasts until the spell ends.
 If the creature has more than one head, the globe of air appears around only one of its heads (which is all the creature needs to avoid suffocation, assuming that all its heads share the same respiratory system).","At Higher Levels. When you cast this spell using a spell slot of 3rd level or higher, you can create two additional globes of fresh air for each slot level above 2nd.",24 hours,S,AAG,,TRUE,TRUE,FALSE,TRUE,TRUE,FALSE,TRUE,TRUE,FALSE,TRUE,FALSE,FALSE,,,
